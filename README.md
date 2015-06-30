@@ -1,5 +1,5 @@
 # Expense
 
-build: npm run build
+build: `npm run build`
 
-start: npm run start
+start: `npm run start`
