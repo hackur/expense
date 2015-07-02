@@ -11,8 +11,8 @@ class Header extends React.Component {
   }
 
   render() {
-    return (<div className="Header">
-      <ul className="Header-tabs">
+    return (<div className="header">
+      <ul className="header-tabs">
         <li><Link to="home">Home</Link></li>
         <li><Link to="admin">Admin</Link></li>
       </ul>

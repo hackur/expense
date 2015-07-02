@@ -1,0 +1,17 @@
+.header {
+  background: #dedede;
+  height: 50px;
+  line-height: 50px;
+  color: rgb(137, 98, 167);
+  padding: 0 20px;
+  box-sizing: border-box;
+
+  &-tabs {
+    list-style-type: none;
+
+    li {
+      width: 100px;
+      display: inline-block;
+    }
+  }
+}

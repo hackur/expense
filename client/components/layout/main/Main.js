@@ -1,6 +1,7 @@
 import React from 'react';
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
-import Header from './header/Header.js'
+import Header from './../header/Header.js'
+import './main.scss';
 
 class Main extends React.Component {
   constructor(props) {
@@ -12,9 +13,9 @@ class Main extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="main">
         <Header></Header>
-        <div class="contaiter">
+        <div className="container">
           <RouteHandler/>
         </div>
       </div>

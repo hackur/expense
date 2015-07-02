@@ -2,9 +2,11 @@ import React from 'react';
 import Router from 'react-router';
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 
-import Admin from './components/Admin.js';
-import Main from './components/Main.js';
-import Home from './components/Home.js';
+import './app.scss';
+
+import Admin from './components/layout/admin/Admin.js';
+import Main from './components/layout/main/Main.js';
+import Home from './components/layout/home/Home.js';
 
 console.log('app');
 
