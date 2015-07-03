@@ -7,7 +7,7 @@ var nodeModulesPath = path.join(__dirname, 'node_modules');
 module.exports = {
   entry: {
     app: "./client/app.js",
-    vendor: ["react", "react-router"]
+    vendor: ["react", "react-router", 'alt']
   },
   output: {
       path: __dirname + '/client/build',

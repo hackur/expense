@@ -8,8 +8,6 @@ import Admin from './components/layout/admin/Admin.js';
 import Main from './components/layout/main/Main.js';
 import Home from './components/layout/home/Home.js';
 
-console.log('app');
-
 let routes = (
   <Route name="main" path="/" handler={Main}>
     <DefaultRoute handler={Home} />
