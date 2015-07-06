@@ -1,19 +1,19 @@
-var webpack = require('webpack');
 var path = require('path');
+var webpack = require('webpack');
 
 var appModulesPath = path.join(path.resolve('./client'), 'components');
 var nodeModulesPath = path.join(__dirname, 'node_modules');
 
 module.exports = {
+  devtool: 'eval-source-map',
   entry: {
-    app: "./client/app.js",
-    vendor: ["react", "react-router", 'alt']
+    app: "./client/index.js",
+    vendor: ["react", "react-router", 'redux']
   },
   output: {
-      path: __dirname + '/client/build',
+      path: path.join(__dirname, 'clinet/build'),
       filename: "/bundle.js"
   },
-  devtool: 'eval-source-map',
   module: {
       loaders: [
           {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},

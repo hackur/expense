@@ -1,8 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
-import './Header.scss';
 
-class Header extends React.Component {
+export default  class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,5 +18,3 @@ class Header extends React.Component {
     </div>);
   }
 }
-
-export default Header;

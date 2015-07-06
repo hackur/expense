@@ -1,13 +1,12 @@
 import React from 'react';
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
-import Header from './../header/Header.js'
-import './main.scss';
+import Header from './Header'
 
-class Main extends React.Component {
+export default class Application extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "Main"
+      name: "Application"
     }
   }
 
@@ -22,5 +21,3 @@ class Main extends React.Component {
     );
   }
 }
-
-export default Main;

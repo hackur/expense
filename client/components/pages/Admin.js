@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Admin extends React.Component {
+export default class Admin extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,5 +12,3 @@ class Admin extends React.Component {
     return (<div>Admin</div>);
   }
 }
-
-export default Admin;
