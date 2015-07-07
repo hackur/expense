@@ -11,7 +11,7 @@ module.exports = {
     vendor: ["react", "react-router", 'redux']
   },
   output: {
-      path: path.join(__dirname, 'clinet/build'),
+      path: path.join(__dirname, 'client/build'),
       filename: "/bundle.js"
   },
   module: {
