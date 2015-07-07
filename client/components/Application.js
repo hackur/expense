@@ -1,10 +1,15 @@
-import React from 'react';
-import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
+import React, { PropTypes } from 'react'
+import { DefaultRoute, Link, Route, RouteHandler } from 'react-router'
 import Header from './Header'
 
 export default class Application extends React.Component {
-  constructor(props) {
-    super(props);
+  static propTypes = {
+    children: PropTypes.any
+  }
+
+  constructor (props, context) {
+    super(props, context)
+    
     this.state = {
       name: "Application"
     }
@@ -15,7 +20,7 @@ export default class Application extends React.Component {
       <div className="main">
         <Header></Header>
         <div className="container">
-          <RouteHandler/>
+          {this.props.children}
         </div>
       </div>
     );

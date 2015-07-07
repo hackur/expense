@@ -6,14 +6,16 @@ import { createDispatcher, createRedux, composeStores } from 'redux'
 import * as components from './components'
 import * as stores from './stores'
 
-const { Application,Admin, Home } = components
+const { Application, Admin, Home } = components
 
 const dispatcher = createDispatcher(composeStores(stores))
 const redux = createRedux(dispatcher)
 
 export default class Root extends React.Component {
 
-  static propTypes = { history: PropTypes.object.isRequired }
+  static propTypes = {
+    history: PropTypes.object.isRequired
+  }
 
   render () {
     const { history } = this.props

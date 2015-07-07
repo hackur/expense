@@ -1,28 +1,11 @@
 import * as constants from '../constants'
 
 const initialState = {
-  expense: {}
+  expenses: {}
 }
 
 const actionsMap = {
-  [constants.FETCH_EXPENSE]: (state, action) => ({ expense: action.expense }),
-
-
-  [constants.FETCH_REPO]: (state, action) => ({ repo: action.repo }),
-  [constants.FETCH_USER_STARGAZERS]: (state, action) => (
-    {
-      stargazers: Object.assign({}, state.stargazers, {
-        user: action.stargazers,
-        pagination: action.pagination
-      })
-    }),
-  [constants.FETCH_REPO_STARGAZERS]: (state, action) => (
-    {
-      stargazers: Object.assign({}, state.stargazers, {
-        repo: action.stargazers,
-        pagination: action.pagination
-      })
-    })
+  [constants.FETCH_EXPENSES]: (state, action) => ({ expenses: action.expenses }),
 }
 
 export default function expense (state = initialState, action) {
