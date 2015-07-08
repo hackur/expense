@@ -1,1 +1,1 @@
-export const FETCH_EXPENSES = 'FETCH_EXPENSE'
+export const FETCH_EXPENSES = 'FETCH_EXPENSES'
