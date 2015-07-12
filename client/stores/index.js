@@ -1,1 +1,1 @@
-export { default as expense } from './expense'
+export { default as expenses } from './expenses'

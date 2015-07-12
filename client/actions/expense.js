@@ -2,7 +2,6 @@ import 'whatwg-fetch'
 import * as constants from '../constants'
 
 export function fetchExpenses () {
-  console.log('fetchExpenses')
   return dispatch => {
     setTimeout(() => {
       dispatch({
@@ -13,6 +12,15 @@ export function fetchExpenses () {
           {id: 3, name: 'name 3'}
         ]
       });
+    }, 1000);
+  };
+}
+
+export function saveExpenses () {
+  console.log('saveExpenses')
+  return dispatch => {
+    setTimeout(() => {
+      console.log('saved')
     }, 1000);
   };
 }

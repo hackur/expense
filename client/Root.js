@@ -3,12 +3,16 @@ import { Redirect, Router, Route } from 'react-router'
 import { Provider } from 'redux/react'
 import { createDispatcher, createRedux, composeStores } from 'redux'
 
+import { loggerMiddleware, thunkMiddleware } from './middleware'
 import * as components from './components'
 import * as stores from './stores'
 
 const { Application, Admin, Home } = components
 
-const dispatcher = createDispatcher(composeStores(stores))
+const dispatcher = createDispatcher(
+  composeStores(stores),
+  getState => [ thunkMiddleware(getState), loggerMiddleware ]
+)
 const redux = createRedux(dispatcher)
 
 export default class Root extends React.Component {
