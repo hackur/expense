@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react'
-import ExpensesListItem from './ExpensesListItem'
+import React, { PropTypes } from 'react';
+import ExpensesListItem from './ExpensesListItem';
 
 export default class ExpensesList extends React.Component {
   static propTypes = {
@@ -10,7 +10,6 @@ export default class ExpensesList extends React.Component {
   render() {
     const {expenses, actions} = this.props;
 
-    console.log(expenses, 'list')
     return (
       <div>
         {expenses.expenses.map(expense =>

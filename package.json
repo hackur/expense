@@ -28,7 +28,9 @@
     "monk": "^1.0.1",
     "react": "^0.13.3",
     "react-router": "1.0.0-beta2",
-    "redux": "^0.12.0",
+    "react-redux": "^1.0.0-alpha",
+    "redux": "^1.0.0-rc",
+    "redux-thunk": "^0.1.0",
     "whatwg-fetch": "^0.9.0",
     "winston": "^1.0.1"
   },

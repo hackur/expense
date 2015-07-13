@@ -1,5 +1,5 @@
 import * as constants from '../constants'
-import createStore from './create.store'
+import createReducer from './create.reducer'
 
 const initialState = {
   expenses: []
@@ -14,4 +14,4 @@ const actionsMap = {
     }
 }
 
-export default createStore(initialState, actionsMap);
+export default createReducer(initialState, actionsMap);

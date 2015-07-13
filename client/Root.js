@@ -1,19 +1,19 @@
-import React, { PropTypes } from 'react'
-import { Redirect, Router, Route } from 'react-router'
-import { Provider } from 'redux/react'
-import { createDispatcher, createRedux, composeStores } from 'redux'
+import React, { PropTypes } from 'react';
+import { Redirect, Router, Route } from 'react-router';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import thunk from 'redux-thunk';
+import { Provider } from 'react-redux';
 
-import { loggerMiddleware, thunkMiddleware } from './middleware'
-import * as components from './components'
-import * as stores from './stores'
+import { logger } from './middleware';
+import * as components from './components';
+import * as reducers from './reducers';
 
 const { Application, Admin, Home } = components
 
-const dispatcher = createDispatcher(
-  composeStores(stores),
-  getState => [ thunkMiddleware(getState), loggerMiddleware ]
-)
-const redux = createRedux(dispatcher)
+console.log(logger);
+const createStoreWithMiddleware = applyMiddleware(thunk, logger)(createStore);
+const reducer = combineReducers(reducers);
+const store = createStoreWithMiddleware(reducer);
 
 export default class Root extends React.Component {
 
@@ -24,7 +24,7 @@ export default class Root extends React.Component {
   render () {
     const { history } = this.props
     return (
-      <Provider redux={redux}>
+      <Provider store={store}>
         {renderRoutes.bind(null, history)}
       </Provider>
     )

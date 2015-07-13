@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react'
-import { connect } from 'redux/react';
-import { bindActionCreators } from 'redux'
-import ExpensesList from '../expenses/ExpensesList'
-import * as ExpenseActions from '../../actions/expense'
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import ExpensesList from '../expenses/ExpensesList';
+import * as ExpenseActions from '../../actions/expense';
 
 @connect(state => ({
   expenses: state.expenses
@@ -10,10 +10,8 @@ import * as ExpenseActions from '../../actions/expense'
 export default class Home extends React.Component {
 
   render() {
-    const { expenses, dispatch } = this.props
-    const actions = bindActionCreators(ExpenseActions, dispatch)
-
-    console.log(expenses, 'home')
+    const { expenses, dispatch } = this.props;
+    const actions = bindActionCreators(ExpenseActions, dispatch);
 
     return (
       <div>

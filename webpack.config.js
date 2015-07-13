@@ -8,7 +8,7 @@ module.exports = {
   devtool: 'eval-source-map',
   entry: {
     app: "./client/index.js",
-    vendor: ["react", "react-router", 'redux']
+    vendor: ["react", "react-router", 'redux', 'react-redux', 'redux-thunk']
   },
   output: {
       path: path.join(__dirname, 'client/build'),
