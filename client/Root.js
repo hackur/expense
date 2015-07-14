@@ -10,7 +10,6 @@ import * as reducers from './reducers';
 
 const { Application, Admin, Home } = components
 
-console.log(logger);
 const createStoreWithMiddleware = applyMiddleware(thunk, logger)(createStore);
 const reducer = combineReducers(reducers);
 const store = createStoreWithMiddleware(reducer);
