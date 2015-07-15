@@ -1,26 +1,27 @@
-import 'whatwg-fetch'
-import * as constants from '../constants'
+import * as constants from '../constants';
+
+var axios = require('axios');
 
 export function fetchExpenses () {
   return dispatch => {
-    setTimeout(() => {
-      dispatch({
-        type: constants.FETCH_EXPENSES,
-        expenses: [
-          {id: 1, name: 'name 1'},
-          {id: 2, name: 'name 2'},
-          {id: 3, name: 'name 3'}
-        ]
+    axios.get('/expenses')
+      .then((response) => {
+        dispatch({
+          type: constants.FETCH_EXPENSES,
+          expenses: response.data
+        });
       });
-    }, 1000);
   };
 }
 
-export function saveExpenses () {
-  console.log('saveExpenses')
+export function addExpense (expense) {
   return dispatch => {
-    setTimeout(() => {
-      console.log('saved')
-    }, 1000);
+    axios.post('/expenses', expense)
+      .then((response) => {
+        dispatch({
+          type: constants.ADD_EXPENSE,
+          expense: response.data
+        });
+      });
   };
 }

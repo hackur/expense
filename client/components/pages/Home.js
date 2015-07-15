@@ -1,11 +1,11 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import ExpensesList from '../expenses/ExpensesList';
+import { ExpenseCreation, ExpensesList } from '../expenses';
 import * as ExpenseActions from '../../actions/expense';
 
 @connect(state => ({
-  expenses: state.expenses
+  expenses: state.expenses.expenses
 }))
 export default class Home extends React.Component {
 
@@ -15,7 +15,7 @@ export default class Home extends React.Component {
 
     return (
       <div>
-        <h2>Home</h2>
+        <ExpenseCreation actions={actions} />
         <ExpensesList actions={actions} {...this.props} />
       </div>
     );
