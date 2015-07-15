@@ -12,5 +12,6 @@ function *index() {
 
 router.get('/', index)
 router.get('/expenses', expenses.all)
+router.post('/expenses', expenses.create)
 
 module.exports = router;

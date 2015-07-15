@@ -1,5 +1,6 @@
 var path = require('path')
 var config = require('./config/config')
+var bodyParser = require('koa-bodyparser');
 var logger = require('koa-logger')
 var serve = require('koa-static')
 var parse = require('co-body')
@@ -8,6 +9,8 @@ var router = require('./router')
 
 // koa setup
 const app = koa()
+
+app.use(bodyParser());
 
 // logger
 app.use(logger())
