@@ -7,7 +7,7 @@ export default function fetch(fn) {
       actions: React.PropTypes.object.isRequired
     }
 
-    componentWillMount () {
+    componentWillMount() {
       fn(this.props.actions);
     }
 

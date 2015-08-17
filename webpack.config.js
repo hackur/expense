@@ -1,30 +1,39 @@
 var path = require('path');
 var webpack = require('webpack');
 
-var appModulesPath = path.join(path.resolve('./client'), 'components');
-var nodeModulesPath = path.join(__dirname, 'node_modules');
-
 module.exports = {
-  devtool: 'eval-source-map',
-  entry: {
-    app: "./client/index.js",
-    vendor: ["react", "react-router", 'redux', 'react-redux', 'redux-thunk', 'axois']
-  },
+  devtool: 'cheap-module-eval-source-map',
+  entry: [
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
+    './client/index.js'
+  ],
   output: {
-      path: path.join(__dirname, 'client/build'),
-      filename: "/bundle.js"
-  },
-  module: {
-      loaders: [
-          {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
-          {test: /\.scss$/, loader: "style!css!sass"}
-      ]
+    path: path.join(__dirname, 'client/dist'),
+    filename: 'bundle.js',
+    publicPath: '/static/'
   },
   plugins: [
-    new webpack.NoErrorsPlugin(),
-    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"vendor.bundle.js")
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
   ],
   resolve: {
-    root: [appModulesPath, nodeModulesPath]
+    extensions: ['', '.js']
+  },
+  module: {
+    preLoaders: [{
+      test: /\.js$/,
+      exclude: [/node_modules/],
+      loader: 'eslint-loader'
+    }],
+    loaders: [{
+      test: /\.js$/,
+      loaders: ['react-hot', 'babel'],
+      exclude: /node_modules/,
+      include: __dirname
+    }, {
+      test: /\.scss$/,
+      loader: "style!css!sass"
+    }]
   }
 };

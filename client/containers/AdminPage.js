@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 export default class Admin extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      name: "Admin"
-    }
+      name: 'Admin'
+    };
   }
 
   render() {

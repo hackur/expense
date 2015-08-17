@@ -1,23 +1,29 @@
-import * as constants from '../constants'
-import createReducer from './create.reducer'
+import { ADD_EXPENSE, DELETE_EXPENSE, EDIT_EXPENSE, FETCH_EXPENSES } from '../constants/ActionTypes';
 
-const initialState = {
-  expenses: []
-}
+const initialState = [{ amount: '', description: '' }];
 
-const actionsMap = {
-  [constants.FETCH_EXPENSES]: (state, action) => {
-    return {
-      ...state,
-      expenses: action.expenses
-    }
-  },
-  [constants.ADD_EXPENSE]: (state, action) => {
-    return {
-      ...state,
-      expenses: state.expenses.concat([action.expense])
-    }
+export default function expenses(state = initialState, action) {
+  switch (action.type) {
+
+    case ADD_EXPENSE:
+      return [action.expense, ...state];
+
+    case DELETE_EXPENSE:
+      return state.filter(todo =>
+        todo.id !== action.id
+      );
+
+    case EDIT_EXPENSE:
+      return state.map(expense =>
+        expense.id === action.id ?
+          Object.assign({}, expense, { amount: action.amount, description: action.description }) :
+          expense
+      );
+
+    case FETCH_EXPENSES:
+      return state.concat(action.expenses);
+
+    default:
+      return state;
   }
 }
-
-export default createReducer(initialState, actionsMap);

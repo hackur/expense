@@ -1,11 +1,10 @@
-import './assets/styles/index.scss'
-import React from 'react'
-import BrowserHistory from 'react-router/lib/BrowserHistory'
-import HashHistory from 'react-router/lib/HashHistory'
-import Root from './Root'
+import 'babel-core/polyfill';
+import './assets/styles/index.scss';
+import React from 'react';
+import Root from './containers/Root';
+import BrowserHistory from 'react-router/lib/BrowserHistory';
 
-const history = process.env.NODE_ENV === 'production' ?
-  new HashHistory() :
-  new BrowserHistory()
-
-React.render(<Root history={history} />, document.getElementById('app'))
+React.render(
+  <Root history={new BrowserHistory()} />,
+  document.getElementById('root')
+);
