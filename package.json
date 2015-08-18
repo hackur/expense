@@ -2,8 +2,9 @@
   "name": "expenses",
   "version": "0.0.1",
   "scripts": {
-    "start": "node server.js",
-    "server": "node --harmony server/server.js"
+    "webpack": "node webpack.dev.server.js",
+    "start": "node --harmony server/server.js",
+    "db": "mongod --dbpath db"
   },
   "repository": {
     "type": "git",
