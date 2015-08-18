@@ -7,7 +7,9 @@ Install all dependencies:
 Build: 
 
 `npm run db`
+
 `npm run server`
+
 `npm run webpack`
 
 Then open `http://localhost:3000`.
