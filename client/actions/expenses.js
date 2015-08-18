@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export function fetchExpenses() {
   return dispatch => {
-    axios.get('/expenses')
+    axios.get('/api/expenses')
       .then((response) => {
         dispatch({
           type: types.FETCH_EXPENSES,
@@ -21,7 +21,7 @@ export function fetchExpenses() {
 
 export function addExpense(expense) {
   return dispatch => {
-    axios.post('/expenses', expense)
+    axios.post('/api/expenses', expense)
       .then((response) => {
         dispatch({
           type: types.ADD_EXPENSE,

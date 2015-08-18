@@ -7,6 +7,9 @@ new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true,
   historyApiFallback: true,
+  proxy: {
+    "/api/*": "http://localhost:3001"
+  },
   stats: {
     colors: true
   }
