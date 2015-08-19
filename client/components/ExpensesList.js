@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import ExpensesListItem from './ExpensesListItem';
 import { fetch } from './decorators';
+import { ListGroup } from 'react-bootstrap';
 
 @fetch(actions => actions.fetchExpenses())
 export default class ExpensesList extends React.Component {
@@ -9,11 +10,11 @@ export default class ExpensesList extends React.Component {
     const {expenses} = this.props;
 
     return (
-      <div>
+      <ListGroup>
         {expenses.map(expense =>
           <ExpensesListItem key={expense.id} expense={expense} />
         )}
-      </div>
+      </ListGroup>
     );
   }
 }

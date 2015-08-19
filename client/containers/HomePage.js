@@ -10,8 +10,6 @@ class Home extends Component {
     const { expenses, dispatch } = this.props;
     const actions = bindActionCreators(ExpenseActions, dispatch);
 
-    console.log(actions);
-
     return (
       <div>
         <ExpenseCreation addExpense={actions.addExpense} />

@@ -1,11 +1,12 @@
 import React, {PropTypes} from 'react';
+import { ListGroupItem, Badge } from 'react-bootstrap';
 
 export default class ExpensesListItem {
   render() {
     const {expense} = this.props;
 
     return (
-      <div>{expense.amount} - {expense.description}</div>
+      <ListGroupItem>{expense.description}<Badge>{expense.amount}</Badge></ListGroupItem>
     );
   }
 }

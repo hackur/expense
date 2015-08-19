@@ -1,5 +1,6 @@
 import 'babel-core/polyfill';
 import './assets/styles/index.scss';
+import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import Root from './containers/Root';
 import BrowserHistory from 'react-router/lib/BrowserHistory';
