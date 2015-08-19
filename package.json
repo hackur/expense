@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "webpack": "node webpack.dev.server.js",
-    "start": "node --harmony server/server.js",
+    "server": "node --harmony server/server.js",
     "db": "mongod --dbpath db"
   },
   "repository": {
