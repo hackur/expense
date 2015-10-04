@@ -13,5 +13,6 @@ function *index() {
 router.get('/', index)
 router.get('/api/expenses', expenses.all)
 router.post('/api/expenses', expenses.create)
+router.del('/api/expenses/:id', expenses.delete)
 
 module.exports = router;

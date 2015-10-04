@@ -41,3 +41,7 @@ ul {
 .list-group-item {
   height: 40px;
 }
+
+.glyphicon {
+  margin: 0 10px;
+}

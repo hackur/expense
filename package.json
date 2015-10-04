@@ -24,6 +24,7 @@
     "co-views": "^0.2.0",
     "history": "^1.8.4",
     "humps": "^0.6.0",
+    "immutable": "^3.7.5",
     "isomorphic-fetch": "^2.1.1",
     "koa": "^0.14.0",
     "koa-bodyparser": "^2.0.0",

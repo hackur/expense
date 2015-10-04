@@ -29,9 +29,9 @@ if (process.env.NODE_ENV === 'development') {
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server'
   ]);
-  plugins.push(new webpack.HotModuleReplacementPlugin())
+  plugins.push(new webpack.HotModuleReplacementPlugin());
 } else {
-  plugins.push(new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }))
+  plugins.push(new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }));
 }
 
 module.exports = {
@@ -47,7 +47,8 @@ module.exports = {
   },
   plugins: plugins,
   resolve: {
-    extensions: ['', '.js', '.html', '.css']
+    extensions: ['', '.js', '.html', '.css'],
+    modulesDirectories: ['./client', './node_modules']
   },
   module: {
     preLoaders: [

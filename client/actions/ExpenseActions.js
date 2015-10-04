@@ -1,5 +1,5 @@
-import * as types from '../constants/ActionTypes';
 import axios from 'axios';
+import * as types from 'constants/ActionTypes';
 
 export function fetchExpenses() {
   return dispatch => {
@@ -27,11 +27,17 @@ export function addExpense(expense) {
           type: types.ADD_EXPENSE,
           expense: response.data
         });
-      })
-      .catch(() => {
+      });
+  };
+}
+
+export function deleteExpense({_id}) {
+  return dispatch => {
+    axios.delete(`/api/expenses/${_id}`)
+      .then(() => {
         dispatch({
-          type: types.ADD_EXPENSE,
-          expense: {}
+          type: types.DELETE_EXPENSE,
+          _id
         });
       });
   };

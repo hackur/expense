@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import { PageHeader } from '../components';
+import { PageHeader } from 'components';
+import './app.css';
 
 export default class App extends Component {
   constructor(props) {

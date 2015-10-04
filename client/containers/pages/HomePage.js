@@ -1,8 +1,8 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { ExpenseCreation, ExpensesList } from '../components';
-import * as ExpenseActions from '../actions/ExpenseActions';
+import { ExpenseCreation, ExpensesList } from 'components';
+import * as ExpenseActions from 'actions/ExpenseActions';
 
 class HomePage extends Component {
 

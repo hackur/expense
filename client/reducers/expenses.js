@@ -1,16 +1,17 @@
-import { ADD_EXPENSE, DELETE_EXPENSE, EDIT_EXPENSE, FETCH_EXPENSES } from '../constants/ActionTypes';
+import Immutable from 'immutable';
+import { ADD_EXPENSE, DELETE_EXPENSE, EDIT_EXPENSE, FETCH_EXPENSES } from 'constants/ActionTypes';
 
-const initialState = [];
+const initialState = Immutable.List([]);
 
 export default function expenses(state = initialState, action) {
   switch (action.type) {
 
     case ADD_EXPENSE:
-      return [...state, action.expense];
+      return state.push(action.expense);
 
     case DELETE_EXPENSE:
-      return state.filter(todo =>
-        todo.id !== action.id
+      return state.filter(expense =>
+        expense._id !== action._id
       );
 
     case EDIT_EXPENSE:
@@ -21,7 +22,7 @@ export default function expenses(state = initialState, action) {
       );
 
     case FETCH_EXPENSES:
-      return [...state, action.expenses];
+      return state.concat(action.expenses);
 
     default:
       return state;
