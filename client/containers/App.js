@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Header from '../components/Header';
+import { PageHeader } from '../components';
 
 export default class App extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ export default class App extends Component {
 
     return (
       <div className="main">
-        <Header />
+        <PageHeader />
         <div className="container">
           {children}
         </div>

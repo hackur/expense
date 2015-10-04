@@ -1,6 +1,7 @@
 import React, { Component, PropTypes} from 'react';
-import { Provider } from 'react-redux';
 import { Redirect, Router, Route } from 'react-router';
+import { Provider } from 'react-redux';
+import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react';
 import configureStore from '../store/configureStore';
 import App from './App';
 import HomePage from './HomePage';
@@ -10,6 +11,18 @@ const store = configureStore();
 
 export default class Root extends Component {
   render() {
+    // initialize Redux DevTools for development env
+    let devTools = '';
+    if (__DEVELOPMENT__) {
+      devTools = (
+        <DebugPanel top right bottom>
+          <DevTools store={store}
+             monitor={LogMonitor}
+             visibleOnLoad={true} />
+        </DebugPanel>
+      );
+    }
+
     return (
       <div>
         <Provider store={store}>
@@ -23,6 +36,7 @@ export default class Root extends Component {
             </Router>
           }
         </Provider>
+        {devTools}
       </div>
     );
   }

@@ -7,7 +7,7 @@ import { ListGroup } from 'react-bootstrap';
 export default class ExpensesList extends React.Component {
 
   render() {
-    const {expenses} = this.props;
+    const { expenses } = this.props;
 
     return (
       <ListGroup>

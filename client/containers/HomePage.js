@@ -2,9 +2,9 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ExpenseCreation, ExpensesList } from '../components';
-import * as ExpenseActions from '../actions/expenses';
+import * as ExpenseActions from '../actions/ExpenseActions';
 
-class Home extends Component {
+class HomePage extends Component {
 
   render() {
     const { expenses, dispatch } = this.props;
@@ -19,9 +19,8 @@ class Home extends Component {
   }
 }
 
-Home.propTypes = {
+HomePage.propTypes = {
   expenses: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired,
   dispatch: PropTypes.object.isRequired
 };
 
@@ -31,4 +30,4 @@ function select(state) {
   };
 }
 
-export default connect(select)(Home);
+export default connect(select)(HomePage);

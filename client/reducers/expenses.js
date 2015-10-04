@@ -1,12 +1,12 @@
 import { ADD_EXPENSE, DELETE_EXPENSE, EDIT_EXPENSE, FETCH_EXPENSES } from '../constants/ActionTypes';
 
-const initialState = [{ amount: '', description: '' }];
+const initialState = [];
 
 export default function expenses(state = initialState, action) {
   switch (action.type) {
 
     case ADD_EXPENSE:
-      return [action.expense, ...state];
+      return [...state, action.expense];
 
     case DELETE_EXPENSE:
       return state.filter(todo =>
@@ -21,7 +21,7 @@ export default function expenses(state = initialState, action) {
       );
 
     case FETCH_EXPENSES:
-      return state.concat(action.expenses);
+      return [...state, action.expenses];
 
     default:
       return state;
